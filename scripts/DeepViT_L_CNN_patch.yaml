@@ -14,7 +14,7 @@ cos_reg_component: 0
 crop_pct: null
 cutmix: 1.0
 cutmix_minmax: null
-data: ../dataset_lmdb
+data: ./dataset_lmdb
 decay_epochs: 30
 decay_rate: 0.1
 dist_bn: ''
@@ -58,7 +58,7 @@ num_classes: 1000
 opt: adamw
 opt_betas: null
 opt_eps: null
-output: ../output/deepvit_L
+output: ./output/deepvit_L
 patience_epochs: 10
 pin_mem: false
 pretrained: false
@@ -70,7 +70,7 @@ recovery_interval: 0
 remode: pixel
 reprob: 0.25
 resplit: false
-resume: ../checkpoint/DViT_83_32b.pth.tar
+resume: ./checkpoint/DViT_83_32b.pth.tar
 save_images: false
 scale:
 - 0.08
