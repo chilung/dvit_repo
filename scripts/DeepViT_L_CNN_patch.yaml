@@ -14,7 +14,8 @@ cos_reg_component: 0
 crop_pct: null
 cutmix: 1.0
 cutmix_minmax: null
-data: ./dataset_lmdb
+# data: ./dataset_lmdb
+data: /home/ccma/Dataset/imagenet/ILSVRC/Data/CLS-LOC
 decay_epochs: 30
 decay_rate: 0.1
 dist_bn: ''

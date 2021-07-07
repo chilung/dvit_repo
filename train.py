@@ -264,7 +264,8 @@ def main():
 
     setup_default_logging()
     args, args_text = _parse_args()
-
+    print("======================CHILUNG MESSAGE 1======================\n\nargs:\n{}\n\nargs_text:\n{}".format(args, args_text))
+    
     args.prefetcher = not args.no_prefetcher
     args.distributed = False
     if 'WORLD_SIZE' in os.environ:
