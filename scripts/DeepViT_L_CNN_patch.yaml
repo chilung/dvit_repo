@@ -59,7 +59,7 @@ num_classes: 1000
 opt: adamw
 opt_betas: null
 opt_eps: null
-output: ./output/deepvit_L
+output: ../output/deepvit_L
 patience_epochs: 10
 pin_mem: false
 pretrained: false

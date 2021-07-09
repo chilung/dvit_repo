@@ -434,7 +434,7 @@ def main():
         _logger.error('Training folder does not exist at: {}'.format(train_dir))
         exit(1)
     if args.use_lmdb:
-        dataset_train = ImageFolderLMDB('../dataset_lmdb/train')
+        dataset_train = ImageFolderLMDB('../Dataset/dataset_lmdb/train')
     else:
         dataset_train = Dataset(train_dir)
     # dataset_train = Dataset(train_dir)
@@ -446,7 +446,7 @@ def main():
             _logger.error('Validation folder does not exist at: {}'.format(eval_dir))
             exit(1)
     if args.use_lmdb:
-        dataset_eval = ImageFolderLMDB('../dataset_lmdb/val')
+        dataset_eval = ImageFolderLMDB('../Dataset/dataset_lmdb/val')
     else:
         dataset_eval = Dataset(eval_dir)
     # dataset_eval = Dataset(eval_dir)
@@ -584,13 +584,21 @@ def main():
             args.model,
             str(data_config['input_size'][-1])
         ])
+        print("###CHILUNG o1###\noutput base: {}, exp_name: {}".format(output_base, exp_name))
         output_dir = get_outdir(output_base, 'train', exp_name)
+        print("###CHILUNG o2###\noutput dir: {}".format(output_dir))
+
         code_dir = get_outdir(output_dir, 'code')
+        print("###CHILUNG o3###\code_dir: {}".format(code_dir))
         copy_tree(os.getcwd(), code_dir)
+        print("###CHILUNG o4###\noutput base: {}, exp_name: {}".format(output_base, exp_name))
         decreasing = True if eval_metric == 'loss' else False
+        print("###CHILUNG o2###\noutput dir: {}".format(output_dir))
         saver = CheckpointSaver(
             model=model, optimizer=optimizer, args=args, model_ema=model_ema, amp_scaler=loss_scaler,
             checkpoint_dir=output_dir, recovery_dir=output_dir, decreasing=decreasing)
+        
+        print("###CHILUNG o3###\noutput dir: {}".format(output_dir))
         with open(os.path.join(output_dir, 'args.yaml'), 'w') as f:
             f.write(args_text)
 
