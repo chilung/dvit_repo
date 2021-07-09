@@ -36,7 +36,7 @@ This repo is the official implementation of ["DeepViT: Towards Deeper Vision Tra
 Download the ImageNet dataset from http://www.image-net.org/
 Then, and move validation images to labeled subfolders, using the following [shell script](https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh) by putting this shell script into the directory of $ImageNet Root$/ILSVRC/Data/CLS-LOC/val and running it.
 ### Convert ImageNet dataset into LMDB (Lightning Memory-Mapped Database) Dataset
-python ./timm/data/lmdb_dataset.py --src_dir $ImageNet Root$/ILSVRC/Data/CLS-LOC/ --dst_dir ./dataset_lmdb
+python ./timm/data/lmdb_dataset.py --src_dir $ImageNet Root$/ILSVRC/Data/CLS-LOC/ --dst_dir ../dataset_lmdb
 
 ## Evaluation
 To evaluate a pre-trained DeepViT models on ImageNet val run:
